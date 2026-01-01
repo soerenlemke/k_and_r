@@ -1,13 +1,43 @@
-# Default ignored files
-/shelf/
-/.idea/workspace.xml
-# Ignored default folder with query files
-/queries/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
-# Editor-based HTTP Client requests
-/httpRequests/
+# macOS / Linux
+.DS_Store
 
-# ide
-.idea
+# JetBrains / CLion
+.idea/
+*.iml
+
+# CMake build directories (CLion nutzt oft cmake-build-*)
+cmake-build-*/
+build/
+out/
+
+# CMake generated files (falls du aus Versehen im Source-Tree baust)
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+Testing/
+CTestTestfile.cmake
+
+# Generated binaries / objects (nur nötig, wenn du im Source-Tree kompilierst)
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+
+# Debugging / profiling
+*.dSYM/
+*.profraw
+*.profdata
+gmon.out
+vgcore.*
+
+# Optional: editor misc (falls vorhanden)
+.shelf/
