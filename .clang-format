@@ -1,0 +1,38 @@
+---
+BasedOnStyle: LLVM
+Language: Cpp
+
+IndentWidth: 4
+TabWidth: 4
+ColumnLimit: 120
+ContinuationIndentWidth: 8
+MaxEmptyLinesToKeep: 2
+InsertNewlineAtEOF: true
+
+BreakBeforeBraces: Custom
+BraceWrapping:
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+
+IndentCaseLabels: true
+
+AlignOperands: true
+AlignTrailingComments: false
+
+IncludeCategories:
+  - Regex: '^<.*'
+    Priority: 1
+  - Regex: '^".*'
+    Priority: 2
+  - Regex: '.*'
+    Priority: 3
+IncludeIsMainRegex: '([-_](test|unittest))?$'
+
+SpacesInAngles: false
+SpacesInParentheses: false
+SpaceAfterCStyleCast: true
+
+DerivePointerAlignment: false
+PointerAlignment: Left
+...
