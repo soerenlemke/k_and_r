@@ -49,3 +49,6 @@ kandr_apply_common_c_flags(ch01_ex02)
 
 add_executable(ch01_ex03 chap01/ex01_03.c)
 kandr_apply_common_c_flags(ch01_ex03)
+
+add_executable(ch01_ex04 chap01/ex01_04.c)
+kandr_apply_common_c_flags(ch01_ex04)
