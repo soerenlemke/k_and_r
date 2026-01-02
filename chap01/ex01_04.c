@@ -12,7 +12,7 @@ int main() {
     printf("Fahr   Cel\n");
 
     double celsius = lower;
-    while(celsius <= upper) {
+    while (celsius <= upper) {
         const double step = 11.1;
 
         const double fahrenheit = (celsius * 9.0 / 5.0) + 32.0;

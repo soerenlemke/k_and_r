@@ -4,6 +4,4 @@
 
 #include <stdio.h>
 
-int main() {
-    printf("hello \c world\n");
-}
+int main() { printf("hello \c world\n"); }
