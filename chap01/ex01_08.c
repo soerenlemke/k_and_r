@@ -6,7 +6,7 @@
 
 // testable by running and then STRG + D for ending console
 
-int main(void) {
+int main() {
     int character;
     int newline_counter = 0;
     int tab_counter = 0;
@@ -27,6 +27,4 @@ int main(void) {
     printf("Newline counter: %d\n", newline_counter);
     printf("Tab counter: %d\n", tab_counter);
     printf("Blank counter: %d\n", blank_counter);
-
-    return 0;
 }
