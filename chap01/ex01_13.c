@@ -27,7 +27,7 @@ int main() {
         }
     }
 
-    // print histogram -> logic limited to 100 atm
+    // print histogram
     for (int i = 0; i <= LONGEST_WORD - 1; i++) {
         printf("%d: ", i);
         for (int j = 0; j < lengths[i]; j++) {
