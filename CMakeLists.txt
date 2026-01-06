@@ -9,6 +9,11 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_library(kandr_common_flags INTERFACE)
 
+add_library(slk INTERFACE)
+target_include_directories(slk INTERFACE
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
 target_compile_options(kandr_common_flags INTERFACE
         -Wall
         -Wextra
@@ -39,7 +44,7 @@ target_link_options(kandr_common_flags INTERFACE
 
 function(kandr_add_exe name source)
     add_executable(${name} ${source})
-    target_link_libraries(${name} PRIVATE kandr_common_flags)
+    target_link_libraries(${name} PRIVATE kandr_common_flags slk)
 endfunction()
 
 kandr_add_exe(ch01_ex01 chap01/ex01_01.c)
@@ -58,3 +63,4 @@ kandr_add_exe(ch01_ex13 chap01/ex01_13.c)
 kandr_add_exe(ch01_ex14 chap01/ex01_14.c)
 kandr_add_exe(ch01_ex15 chap01/ex01_15.c)
 kandr_add_exe(ch01_ex16 chap01/ex01_16.c)
+kandr_add_exe(ch01_ex17 chap01/ex01_17.c)
