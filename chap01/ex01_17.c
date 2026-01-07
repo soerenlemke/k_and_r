@@ -4,10 +4,9 @@
 
 #include <stdio.h>
 #include <stdbool.h>
-#include <grund.h>
-#include <stdlib.h>
 
 #define MAXLINE 1000
+#define LINESBUFFER 100
 
 bool got_newline = false;
 
@@ -24,6 +23,9 @@ int main(void) {
     char current_text[MAXLINE];
     int current_text_len = 0;
 
+    static char saved_lines[LINESBUFFER][MAXLINE];
+    static int saved_count = 0;
+
     while ((len = getline(line, MAXLINE)) > 0) {
         current_len += len;
 
@@ -33,8 +35,9 @@ int main(void) {
         current_text[current_text_len] = '\0';
 
         if (current_text_len > 80) {
-            printf("%s", current_text);
-            GRUND_TODO("safe line and print all the lines bigger than 80 later");
+            if (saved_count < LINESBUFFER) {
+                copy(saved_lines[saved_count++], current_text);
+            }
         }
 
         if (got_newline) {
@@ -44,7 +47,9 @@ int main(void) {
         }
     }
 
-    if (current_len > 80) {
+    printf("Lines longer than 80 chars: \n");
+    for (int i = 0; i < LINESBUFFER; i++) {
+        printf("%s", saved_lines[i]);
     }
 
     return 0;
